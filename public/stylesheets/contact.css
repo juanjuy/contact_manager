@@ -1,0 +1,125 @@
+body {
+  margin: 0;
+}
+
+header {
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin: 0;
+}
+
+#control {
+  width: 700px;
+  height: 150px;
+  margin: auto;
+  text-align: center;
+  background-color: lightgray;
+  border-radius: 5px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.add {
+  width: 200px;
+  height: 50px;
+}
+
+#tagList {
+  display: inline-block;
+}
+
+#search {
+  height: 30px;
+  width: 200px;
+}
+
+#reset {
+  margin-top: 10px;
+  display: block;
+}
+
+#yesContacts {
+  margin: 0 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+dt {
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+dd {
+  margin-inline-start: 0px;
+  min-height: 20px;
+}
+
+#noContacts,
+#noMatches {
+  width: 500px;
+  margin: auto;
+  text-align: center;
+}
+
+.contact {
+  border: 1px solid black;
+  margin: 2px;
+  padding: 5px;
+}
+
+.edit,
+.delete {
+  min-width: 50px;
+  height: 20px;
+  background-color: darkgray;
+}
+
+.tag {
+  background-color: lightgreen;
+}
+
+#tagFunctionality {
+  max-width: 160px;
+}
+
+#contactFormPage {
+  width: 100%;
+  text-align: right;
+}
+
+#contactFormPage input[type="text"] {
+  width: 200px;
+}
+
+#contactFormPage li {
+  list-style-type: none;
+  width: 400px;
+  margin: auto;
+}
+
+#formButtons {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+#contactFormPage input[type="submit"],
+.cancel {
+  width: 100px;
+}
+
+.invalid {
+  border: 1px solid red;
+}
+
+.validation {
+  position: absolute;
+  display: none;
+  color: red;
+  margin: 0;
+}

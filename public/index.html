@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Contact Manager</title>
+  <script src="/javascripts/jquery.js"></script>
+  <script src="/javascripts/handlebars.js"></script>
+  <script id="contactTemplate" type="text/x-handlebars">
+    <div id="yesContacts">
+      {{#each contacts}}
+      <div class="contact" data-id="{{id}}">
+        <h2>{{full_name}}</h2>
+        <dl>
+          <dt>Phone Number:</dt>
+          <dd class="phone_number">{{phone_number}}</dd>
+          <dt>Email:</dt>
+          <dd class="email">{{email}}</dd>
+          <dt>Tags:</dt>
+          <dd class="tags">
+            {{#each tags}}
+            <button class="tag">{{this}}</button>
+            {{/each}}
+          </dd>
+        </dl>
+        <button class="edit" data-id="{{id}}">Edit</button>
+        <button class="delete" data-id="{{id}}">Delete</button>
+      </div>
+      {{/each}}
+  </script>
+  <script id="noContactTemplate" type="text/x-handlebars">
+    <div id="noContacts">
+      <h3>There are no contacts.</h3>
+      <button class="add">Add Contact</button>
+    </div>
+  </script>
+  <script id="noMatchesTemplate" type="text/x-handlebars">
+    <div id="noMatches">
+      <h3>There are no contacts containing <i>{{this}}</i></h1>
+    </div>
+  </script>
+  <link rel="stylesheet" href="/stylesheets/contact.css">
+  <script src="/javascripts/contact.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Contact Manager</h1>
+  </header>
+  <main>
+    <div id="control">
+      <button class="add">Add Contact</button>
+      <div id="tagFunctionality">
+        <p>Search by tag:</p>
+        <div id="tagList"></div>
+        <button id="reset">Reset</button>
+      </div>
+      <input type="text" id="search" placeholder="Search by name">
+    </div>
+    <div id="contacts"></div>
+  </main>
+  <div id="contactFormPage">
+    <h1>Create Contact</h1>
+    <form id="contactForm">
+      <ul>
+        <li>
+          <label for="full_name">Full name:</label>
+          <input type="text" name="full_name">
+          <p class="validation">Full name is required.</p>
+        </li>
+        <li>
+          <label for="email">Email address:</label>
+          <input type="text" name="email">
+          <p class="validation">Email is required.</p>
+        </li>
+        <li>
+          <label for="phone_number">Phone number:</label>
+          <input type="text" name="phone_number">
+          <p class="validation">Phone number is required.</p>
+        </li>
+        <li>
+          <label for="tags">Tags (comma-separated):</label>
+          <input type="text" name="tags">
+        </li>
+      </ul>
+      <div id="formButtons">
+        <input type="submit">
+        <button class="cancel">Cancel</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
